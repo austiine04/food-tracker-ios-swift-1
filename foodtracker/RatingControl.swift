@@ -23,6 +23,7 @@ class RatingControl: UIView {
             buttonFrame.origin.x = CGFloat(startingPointOnXAxis(index))
             button.frame = buttonFrame
         }
+        updateButtonSelectionStates()
     }
 
     override func intrinsicContentSize() -> CGSize {
@@ -31,10 +32,17 @@ class RatingControl: UIView {
 
     // MARK: Button Action
     func ratingButtonTapped(button: UIButton) {
-        print("Button pressed 👍")
+        rating = ratingButtons.indexOf(button)! + 1
+        updateButtonSelectionStates()
     }
 
     //MARK: Private functions
+    private func updateButtonSelectionStates() {
+        for (index, button) in ratingButtons.enumerate() {
+            button.selected = index < rating
+        }
+    }
+
     private func startingPointOnXAxis(index: Int) -> Int {
         let spacingBetweenButtons = 5
         return index * (buttonSize + spacingBetweenButtons)
