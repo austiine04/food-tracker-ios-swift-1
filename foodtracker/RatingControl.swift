@@ -3,7 +3,11 @@ import UIKit
 class RatingControl: UIView {
 
     //MARK: Properties
-    var rating: Int = 0
+    var rating: Int = 0 {
+        didSet {
+            setNeedsLayout()
+        }
+    }
     var ratingButtons = [UIButton]()
     var starCount = 5
     let buttonSize = 44

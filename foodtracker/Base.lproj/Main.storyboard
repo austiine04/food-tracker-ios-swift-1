@@ -19,29 +19,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ryO-x7-i5h">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ryO-x7-i5h">
                                 <rect key="frame" x="20" y="80" width="560" height="499"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVF-Tc-pml">
-                                        <rect key="frame" x="0.0" y="0.0" width="87" height="21"/>
+                                        <rect key="frame" x="237" y="0.0" width="87" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="751" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IFh-SD-pzn">
-                                        <rect key="frame" x="0.0" y="33" width="560" height="31"/>
+                                        <rect key="frame" x="0.0" y="33" width="560" height="73"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1X2-zR-cGW">
-                                        <rect key="frame" x="0.0" y="75" width="151" height="30"/>
-                                        <state key="normal" title="Set Default Label Text"/>
-                                        <connections>
-                                            <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yeV-4n-5Z7"/>
-                                        </connections>
-                                    </button>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="vbi-h1-nIM">
-                                        <rect key="frame" x="0.0" y="117" width="320" height="320"/>
+                                        <rect key="frame" x="120" y="117" width="320" height="320"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vbi-h1-nIM" secondAttribute="height" multiplier="1:1" id="qnE-5w-FeK"/>
@@ -51,7 +44,7 @@
                                         </connections>
                                     </imageView>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AKT-Wb-Jsz" customClass="RatingControl" customModule="foodtracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="449" width="240" height="50"/>
+                                        <rect key="frame" x="0.0" y="449" width="560" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -60,7 +53,6 @@
                                     <constraint firstItem="AKT-Wb-Jsz" firstAttribute="leading" secondItem="ryO-x7-i5h" secondAttribute="leadingMargin" id="Mje-9I-f15"/>
                                     <constraint firstItem="AKT-Wb-Jsz" firstAttribute="top" secondItem="vbi-h1-nIM" secondAttribute="bottom" constant="12" id="VxV-9m-YSZ"/>
                                     <constraint firstItem="AKT-Wb-Jsz" firstAttribute="bottom" secondItem="ryO-x7-i5h" secondAttribute="bottomMargin" id="biG-LN-Ryr"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="AKT-Wb-Jsz" secondAttribute="trailing" constant="320" id="nhG-6H-kHw"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="IFh-SD-pzn" secondAttribute="trailing" id="yhK-sb-DSZ"/>
                                 </constraints>
                             </stackView>
@@ -77,6 +69,7 @@
                         <outlet property="mealNameLabel" destination="sVF-Tc-pml" id="iMl-jk-cDL"/>
                         <outlet property="mealNameText" destination="IFh-SD-pzn" id="Yuc-6c-yq1"/>
                         <outlet property="photoImageView" destination="vbi-h1-nIM" id="vqO-al-4nS"/>
+                        <outlet property="ratingControl" destination="AKT-Wb-Jsz" id="4hw-gD-ffA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
