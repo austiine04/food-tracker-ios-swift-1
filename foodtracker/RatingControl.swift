@@ -11,7 +11,9 @@ class RatingControl: UIView {
     //MARK: Initialization
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        createButtons()
+        let filledStarImage = UIImage(named: "filledStar")
+        let emptyStarImage = UIImage(named: "emptyStar")
+        createButtons(emptyStarImage!, filledStar: filledStarImage!)
     }
 
     //MARK: Overrides
@@ -38,10 +40,13 @@ class RatingControl: UIView {
         return index * (buttonSize + spacingBetweenButtons)
     }
 
-    private func createButtons() {
+    private func createButtons(emptyStar: UIImage, filledStar: UIImage) {
         for _ in 0..<starCount {
             let button = UIButton()
-            button.backgroundColor = UIColor.redColor()
+            button.setImage(emptyStar, forState: .Normal)
+            button.setImage(filledStar, forState: .Selected)
+            button.setImage(filledStar, forState: [.Highlighted, .Selected])
+            button.adjustsImageWhenHighlighted = false
             button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(_:)), forControlEvents: .TouchDown)
             ratingButtons.append(button)
             addSubview(button)
