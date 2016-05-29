@@ -44,17 +44,22 @@
                                         </connections>
                                     </imageView>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AKT-Wb-Jsz" customClass="RatingControl" customModule="foodtracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="449" width="560" height="50"/>
+                                        <rect key="frame" x="160" y="449" width="240" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="IFh-SD-pzn" firstAttribute="leading" secondItem="ryO-x7-i5h" secondAttribute="leadingMargin" id="8NN-iM-65x"/>
-                                    <constraint firstItem="AKT-Wb-Jsz" firstAttribute="leading" secondItem="ryO-x7-i5h" secondAttribute="leadingMargin" id="Mje-9I-f15"/>
+                                    <constraint firstItem="AKT-Wb-Jsz" firstAttribute="leading" secondItem="ryO-x7-i5h" secondAttribute="leadingMargin" priority="250" id="Mje-9I-f15"/>
                                     <constraint firstItem="AKT-Wb-Jsz" firstAttribute="top" secondItem="vbi-h1-nIM" secondAttribute="bottom" constant="12" id="VxV-9m-YSZ"/>
                                     <constraint firstItem="AKT-Wb-Jsz" firstAttribute="bottom" secondItem="ryO-x7-i5h" secondAttribute="bottomMargin" id="biG-LN-Ryr"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="IFh-SD-pzn" secondAttribute="trailing" id="yhK-sb-DSZ"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Mje-9I-f15"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
