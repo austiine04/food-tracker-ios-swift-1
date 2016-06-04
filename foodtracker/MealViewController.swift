@@ -11,6 +11,10 @@ class MealViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     var meal = Meal?()
     
     //MARK: navigation
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if saveButton === sender {
             let name = mealNameText.text ?? ""
