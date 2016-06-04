@@ -1,0 +1,2 @@
+- when the device orientation changes, use a master detail view controller
+- add an option for the user to take a picture using the camera.

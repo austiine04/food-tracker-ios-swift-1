@@ -86,16 +86,16 @@
             </objects>
             <point key="canvasLocation" x="849" y="387"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Meal Table View Controller-->
         <scene sceneID="h12-r2-PY9">
             <objects>
-                <tableViewController id="Gd3-gz-6u8" sceneMemberID="viewController">
+                <tableViewController id="Gd3-gz-6u8" customClass="MealTableViewController" customModule="foodtracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Ec-UX-YJh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="90" id="eDl-E6-FqZ" customClass="MealTableViewCell" customModule="foodtracker" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MealTableViewCell" rowHeight="90" id="eDl-E6-FqZ" customClass="MealTableViewCell" customModule="foodtracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eDl-E6-FqZ" id="hk3-Hz-HGu">
@@ -117,6 +117,11 @@
                                         </view>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="4M9-ux-tdW" id="0f3-gb-mww"/>
+                                    <outlet property="photoImageView" destination="XVj-bL-2EG" id="lBW-9T-XrT"/>
+                                    <outlet property="ratingControl" destination="zRw-hD-ZbO" id="trM-rJ-rLU"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
