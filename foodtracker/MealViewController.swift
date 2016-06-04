@@ -12,7 +12,13 @@ class MealViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     
     //MARK: navigation
     @IBAction func cancel(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        if isPresentingInAddMealMode {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+        else {
+            navigationController!.popViewControllerAnimated(true)
+        }
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -38,6 +44,13 @@ class MealViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         super.viewDidLoad()
         mealNameText.delegate = self
         checkValidMealName()
+
+        if let meal = meal {
+            navigationItem.title = meal.name
+            mealNameText.text = meal.name
+            photoImageView.image = meal.photo
+            ratingControl.rating = meal.rating
+        }
     }
 
     // MARK: UITextFieldDelegate
