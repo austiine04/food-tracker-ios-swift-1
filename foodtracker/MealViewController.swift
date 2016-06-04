@@ -33,6 +33,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UINavigationCon
     override func viewDidLoad() {
         super.viewDidLoad()
         mealNameText.delegate = self
+        checkValidMealName()
     }
 
     // MARK: UITextFieldDelegate
@@ -41,8 +42,18 @@ class MealViewController: UIViewController, UITextFieldDelegate, UINavigationCon
         return true
     }
 
+    func textFieldDidBeginEditing(textField: UITextField) {
+        saveButton.enabled = false
+    }
+
     func textFieldDidEndEditing(textField: UITextField) {
-        
+        checkValidMealName()
+        navigationItem.title = textField.text
+    }
+
+    func checkValidMealName() {
+        let text = mealNameText.text ?? ""
+        saveButton.enabled = !text.isEmpty
     }
 
     //MARK: UIImagePickerControllerDelegate
