@@ -123,7 +123,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Meals" id="fqc-5H-rMm">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="A6b-wC-Mi9"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="A6b-wC-Mi9">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="Add Item" id="j7h-7H-UQz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3kz-eC-fhf" userLabel="First Responder" sceneMemberID="firstResponder"/>
