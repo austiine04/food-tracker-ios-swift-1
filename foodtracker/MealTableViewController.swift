@@ -17,6 +17,7 @@ class MealTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadSampleMeals()
+        navigationItem.leftBarButtonItem = editButtonItem()
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -63,6 +64,20 @@ class MealTableViewController: UITableViewController {
             }
         } else if segue.identifier == "AddItem" {
             print("Adding new meal.")
+        }
+    }
+
+    // conditional edit for table view controller
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            meals.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
 }
